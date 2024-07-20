@@ -7,53 +7,53 @@
 
 import SwiftUI
 import SwiftData
+import AppKit
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State private var selectedTab = 0
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        TabView(selection: $selectedTab) {
+            PeriodicTableView()
+                .tabItem {
+                    Label("Periodic Table", systemImage: "tablecells")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                .tag(0)
+            
+            CompoundListView()
+                .tabItem {
+                    Label("Compounds", systemImage: "doc.text")
                 }
-            }
-        } detail: {
-            Text("Select an item")
+                .tag(1)
+            
+            CalculatorView()
+                .tabItem {
+                    Label("Calculators", systemImage: "function")
+                }
+                .tag(2)
+        }
+        .onChange(of: selectedTab) { oldValue, newValue in
+            updateWindowSize(for: newValue)
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+    
+    private func updateWindowSize(for tab: Int) {
+        let newSize: NSSize
+        switch tab {
+        case 0, 1:
+            newSize = NSSize(width: 1000, height: 700)
+        case 2:
+            newSize = NSSize(width: 550, height: 400)
+        default:
+            return
+        }
+        
+        if let window = NSApplication.shared.windows.first {
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = 0.3
+                context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+                window.animator().setFrame(NSRect(origin: window.frame.origin, size: newSize), display: true)
+            }, completionHandler: nil)
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-}
-
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

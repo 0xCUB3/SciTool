@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C18208E62C4A9978001CB53F /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18208E32C4A9978001CB53F /* Element.swift */; };
+		C18430D92C4AA4D4008290A9 /* RRLyrae.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18430D82C4AA4CF008290A9 /* RRLyrae.swift */; };
 		C1AEA6162C4A984C00CAE55D /* SciToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA6152C4A984C00CAE55D /* SciToolApp.swift */; };
 		C1AEA6182C4A984C00CAE55D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA6172C4A984C00CAE55D /* ContentView.swift */; };
 		C1AEA61A2C4A984C00CAE55D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA6192C4A984C00CAE55D /* Item.swift */; };
 		C1AEA61C2C4A984D00CAE55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1AEA61B2C4A984D00CAE55D /* Assets.xcassets */; };
 		C1AEA61F2C4A984D00CAE55D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1AEA61E2C4A984D00CAE55D /* Preview Assets.xcassets */; };
+		C1AEA6272C4A986900CAE55D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA6262C4A986900CAE55D /* Models.swift */; };
+		C1AEA6292C4A988800CAE55D /* PeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA6282C4A988800CAE55D /* PeriodicTableView.swift */; };
+		C1AEA62B2C4A989B00CAE55D /* CompoundListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA62A2C4A989B00CAE55D /* CompoundListView.swift */; };
+		C1AEA62D2C4A98AD00CAE55D /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA62C2C4A98AD00CAE55D /* CalculatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C18208E32C4A9978001CB53F /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		C18430D82C4AA4CF008290A9 /* RRLyrae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRLyrae.swift; sourceTree = "<group>"; };
 		C1AEA6122C4A984C00CAE55D /* SciTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AEA6152C4A984C00CAE55D /* SciToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SciToolApp.swift; sourceTree = "<group>"; };
 		C1AEA6172C4A984C00CAE55D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +30,10 @@
 		C1AEA61B2C4A984D00CAE55D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1AEA61E2C4A984D00CAE55D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1AEA6202C4A984D00CAE55D /* SciTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SciTool.entitlements; sourceTree = "<group>"; };
+		C1AEA6262C4A986900CAE55D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C1AEA6282C4A988800CAE55D /* PeriodicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableView.swift; sourceTree = "<group>"; };
+		C1AEA62A2C4A989B00CAE55D /* CompoundListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundListView.swift; sourceTree = "<group>"; };
+		C1AEA62C2C4A98AD00CAE55D /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C18208E52C4A9978001CB53F /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C18208E32C4A9978001CB53F /* Element.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		C18430DA2C4AA505008290A9 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				C18430D82C4AA4CF008290A9 /* RRLyrae.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
 		C1AEA6092C4A984C00CAE55D = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +82,18 @@
 		C1AEA6142C4A984C00CAE55D /* SciTool */ = {
 			isa = PBXGroup;
 			children = (
+				C18430DA2C4AA505008290A9 /* Calculators */,
+				C18208E52C4A9978001CB53F /* Elements */,
 				C1AEA6152C4A984C00CAE55D /* SciToolApp.swift */,
 				C1AEA6172C4A984C00CAE55D /* ContentView.swift */,
 				C1AEA6192C4A984C00CAE55D /* Item.swift */,
 				C1AEA61B2C4A984D00CAE55D /* Assets.xcassets */,
 				C1AEA6202C4A984D00CAE55D /* SciTool.entitlements */,
 				C1AEA61D2C4A984D00CAE55D /* Preview Content */,
+				C1AEA6262C4A986900CAE55D /* Models.swift */,
+				C1AEA6282C4A988800CAE55D /* PeriodicTableView.swift */,
+				C1AEA62A2C4A989B00CAE55D /* CompoundListView.swift */,
+				C1AEA62C2C4A98AD00CAE55D /* CalculatorView.swift */,
 			);
 			path = SciTool;
 			sourceTree = "<group>";
@@ -143,8 +177,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1AEA6182C4A984C00CAE55D /* ContentView.swift in Sources */,
+				C1AEA62D2C4A98AD00CAE55D /* CalculatorView.swift in Sources */,
 				C1AEA61A2C4A984C00CAE55D /* Item.swift in Sources */,
 				C1AEA6162C4A984C00CAE55D /* SciToolApp.swift in Sources */,
+				C1AEA6272C4A986900CAE55D /* Models.swift in Sources */,
+				C18430D92C4AA4D4008290A9 /* RRLyrae.swift in Sources */,
+				C18208E62C4A9978001CB53F /* Element.swift in Sources */,
+				C1AEA6292C4A988800CAE55D /* PeriodicTableView.swift in Sources */,
+				C1AEA62B2C4A989B00CAE55D /* CompoundListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +251,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -266,6 +307,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -293,7 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.0xcube.SciTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -321,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = app.0xcube.SciTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
