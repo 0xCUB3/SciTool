@@ -43,7 +43,7 @@ struct ContentView: View {
         case 0, 1:
             newSize = NSSize(width: 1000, height: 700)
         case 2:
-            newSize = NSSize(width: 550, height: 400)
+            newSize = NSSize(width: 640, height: 480)
         default:
             return
         }

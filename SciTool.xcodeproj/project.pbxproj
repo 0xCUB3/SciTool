@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C129E3A12C51B34700655737 /* BinaryStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C129E3A02C51B34500655737 /* BinaryStar.swift */; };
+		C129E3A42C51B36900655737 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C129E3A32C51B36700655737 /* InputView.swift */; };
+		C129E3A62C51B48E00655737 /* LumMag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C129E3A52C51B48D00655737 /* LumMag.swift */; };
+		C129E3BC2C51B5F800655737 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C129E3BB2C51B5F800655737 /* Reachability.swift */; };
 		C18208E62C4A9978001CB53F /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18208E32C4A9978001CB53F /* Element.swift */; };
 		C18430D92C4AA4D4008290A9 /* RRLyrae.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18430D82C4AA4CF008290A9 /* RRLyrae.swift */; };
 		C1AEA6162C4A984C00CAE55D /* SciToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AEA6152C4A984C00CAE55D /* SciToolApp.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C129E3A02C51B34500655737 /* BinaryStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryStar.swift; sourceTree = "<group>"; };
+		C129E3A32C51B36700655737 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		C129E3A52C51B48D00655737 /* LumMag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumMag.swift; sourceTree = "<group>"; };
+		C129E3BB2C51B5F800655737 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C18208E32C4A9978001CB53F /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		C18430D82C4AA4CF008290A9 /* RRLyrae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRLyrae.swift; sourceTree = "<group>"; };
 		C1AEA6122C4A984C00CAE55D /* SciTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C129E3A22C51B36300655737 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C129E3A32C51B36700655737 /* InputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C129E3B82C51B5EA00655737 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C129E3BB2C51B5F800655737 /* Reachability.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		C18208E52C4A9978001CB53F /* Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +82,8 @@
 		C18430DA2C4AA505008290A9 /* Calculators */ = {
 			isa = PBXGroup;
 			children = (
+				C129E3A52C51B48D00655737 /* LumMag.swift */,
+				C129E3A02C51B34500655737 /* BinaryStar.swift */,
 				C18430D82C4AA4CF008290A9 /* RRLyrae.swift */,
 			);
 			path = Calculators;
@@ -82,6 +108,8 @@
 		C1AEA6142C4A984C00CAE55D /* SciTool */ = {
 			isa = PBXGroup;
 			children = (
+				C129E3B82C51B5EA00655737 /* Helpers */,
+				C129E3A22C51B36300655737 /* Views */,
 				C18430DA2C4AA505008290A9 /* Calculators */,
 				C18208E52C4A9978001CB53F /* Elements */,
 				C1AEA6152C4A984C00CAE55D /* SciToolApp.swift */,
@@ -176,13 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C129E3BC2C51B5F800655737 /* Reachability.swift in Sources */,
 				C1AEA6182C4A984C00CAE55D /* ContentView.swift in Sources */,
 				C1AEA62D2C4A98AD00CAE55D /* CalculatorView.swift in Sources */,
 				C1AEA61A2C4A984C00CAE55D /* Item.swift in Sources */,
 				C1AEA6162C4A984C00CAE55D /* SciToolApp.swift in Sources */,
 				C1AEA6272C4A986900CAE55D /* Models.swift in Sources */,
 				C18430D92C4AA4D4008290A9 /* RRLyrae.swift in Sources */,
+				C129E3A62C51B48E00655737 /* LumMag.swift in Sources */,
+				C129E3A12C51B34700655737 /* BinaryStar.swift in Sources */,
 				C18208E62C4A9978001CB53F /* Element.swift in Sources */,
+				C129E3A42C51B36900655737 /* InputView.swift in Sources */,
 				C1AEA6292C4A988800CAE55D /* PeriodicTableView.swift in Sources */,
 				C1AEA62B2C4A989B00CAE55D /* CompoundListView.swift in Sources */,
 			);

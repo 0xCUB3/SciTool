@@ -66,7 +66,7 @@ struct PeriodicTableGrid: View {
             // Period 1
             HStack(spacing: spacing) {
                 ElementCell(element: elementFor(1), size: cellSize)
-                Color.clear.frame(width: cellSize * 16 + spacing * 15, height: cellSize)
+                Color.clear.frame(width: cellSize * 16 + spacing * 16, height: cellSize)
                 ElementCell(element: elementFor(2), size: cellSize)
             }
             
@@ -75,7 +75,7 @@ struct PeriodicTableGrid: View {
                 ForEach(3...4, id: \.self) { i in
                     ElementCell(element: elementFor(i), size: cellSize)
                 }
-                Color.clear.frame(width: cellSize * 10 + spacing * 9, height: cellSize)
+                Color.clear.frame(width: cellSize * 10 + spacing * 10, height: cellSize)
                 ForEach(5...10, id: \.self) { i in
                     ElementCell(element: elementFor(i), size: cellSize)
                 }
@@ -83,7 +83,11 @@ struct PeriodicTableGrid: View {
             
             // Period 3
             HStack(spacing: spacing) {
-                ForEach(11...18, id: \.self) { i in
+                ForEach(11...12, id: \.self) { i in
+                    ElementCell(element: elementFor(i), size: cellSize)
+                }
+                Color.clear.frame(width: cellSize * 10 + spacing * 10, height: cellSize)
+                ForEach(13...18, id: \.self) { i in
                     ElementCell(element: elementFor(i), size: cellSize)
                 }
             }
@@ -94,32 +98,40 @@ struct PeriodicTableGrid: View {
                     ElementCell(element: elementFor(i), size: cellSize)
                 }
             }
-            
-            // Periods 5-6
-            ForEach(5...6, id: \.self) { row in
-                HStack(spacing: spacing) {
-                    ForEach(1...18, id: \.self) { column in
-                        ElementCell(element: elementFor((row - 1) * 18 + column), size: cellSize)
-                    }
+            // Period 4
+            HStack(spacing: spacing) {
+                ForEach(37...54, id: \.self) { i in
+                    ElementCell(element: elementFor(i), size: cellSize)
                 }
             }
             
-            // Period 7 (with lanthanides and actinides placeholders)
+            // Period 5
             HStack(spacing: spacing) {
-                ElementCell(element: elementFor(87), size: cellSize)
-                ElementCell(element: elementFor(88), size: cellSize)
+                ForEach(55...56, id: \.self) { i in
+                    ElementCell(element: elementFor(i), size: cellSize)
+                }
                 ElementCell(element: nil, size: cellSize, text: "57-71")
-                ForEach(104...118, id: \.self) { i in
+                ForEach(72...86, id: \.self) { i in
+                    ElementCell(element: elementFor(i), size: cellSize)
+                }
+            }
+            
+            // Period 6
+            HStack(spacing: spacing) {
+                ForEach(87...88, id: \.self) { i in
                     ElementCell(element: elementFor(i), size: cellSize)
                 }
                 ElementCell(element: nil, size: cellSize, text: "89-103")
+                ForEach(104...118, id: \.self) { i in
+                    ElementCell(element: elementFor(i), size: cellSize)
+                }
             }
             
             Color.clear.frame(height: spacing * 2)
             
             // Lanthanides
             HStack(spacing: spacing) {
-                Text("57-71").font(.caption).frame(width: cellSize * 2 + spacing, alignment: .trailing)
+                Text("Lanthanides").font(.caption).frame(width: cellSize * 2 + spacing, alignment: .trailing)
                 ForEach(57...71, id: \.self) { number in
                     ElementCell(element: elementFor(number), size: cellSize)
                 }
@@ -127,7 +139,7 @@ struct PeriodicTableGrid: View {
             
             // Actinides
             HStack(spacing: spacing) {
-                Text("89-103").font(.caption).frame(width: cellSize * 2 + spacing, alignment: .trailing)
+                Text("Actinides").font(.caption).frame(width: cellSize * 2 + spacing, alignment: .trailing)
                 ForEach(89...103, id: \.self) { number in
                     ElementCell(element: elementFor(number), size: cellSize)
                 }
@@ -137,6 +149,24 @@ struct PeriodicTableGrid: View {
     
     func elementFor(_ atomicNumber: Int) -> Element? {
         elements.first { $0.Z == atomicNumber }
+    }
+    
+    func getAtomicNumber(row: Int, column: Int) -> Int {
+        let baseNumber = (row - 2) * 18 + column
+        if row >= 6 {
+            if column <= 2 {
+                return baseNumber
+            } else if column == 3 {
+                return 0 // Placeholder for lanthanides/actinides
+            } else {
+                let adjustedNumber = baseNumber + 14 // Skip 14 elements (lanthanides/actinides)
+                if (adjustedNumber >= 57 && adjustedNumber <= 71) || (adjustedNumber >= 89 && adjustedNumber <= 103) {
+                    return 0 // Skip lanthanides and actinides
+                }
+                return adjustedNumber
+            }
+        }
+        return baseNumber
     }
 }
 

@@ -46,12 +46,8 @@ struct CalculatorView: View {
             PotentialGraph3DView()
         case "Circuit Simulator":
             CircuitSimulatorView()
-        case "Stoichiometry Reaction Calculator":
-            StoichiometryReactionCalculatorView()
-        case "Stoichiometry Mass Calculator":
-            StoichiometryMassCalculatorView()
         case "Stellar Properties Solver":
-            StellarPropertiesSolverView()
+            LuminosityMagnitudeCalculatorView()
         case "Binary Star System Solver":
             BinaryStarSystemSolverView()
         case "RR Lyrae Variable Calculator":
@@ -98,16 +94,3 @@ struct StoichiometryMassCalculatorView: View {
         Text("Stoichiometry Mass Calculator")
     }
 }
-
-struct StellarPropertiesSolverView: View {
-    var body: some View {
-        Text("Stellar Properties Solver")
-    }
-}
-
-struct BinaryStarSystemSolverView: View {
-    var body: some View {
-        Text("Binary Star System Solver")
-    }
-}
-
